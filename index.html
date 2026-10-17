@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saharat Labs — AI agents, tools, and experiments</title>
+  <meta name="description" content="Saharat Labs — AI agents, developer tools, and experiments. Local-first, practical, and open." />
+  <meta name="theme-color" content="#0b0d12" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Saharat Labs" />
+  <meta property="og:description" content="AI agents, tools, and experiments — local-first and practical." />
+  <meta property="og:url" content="https://saharat-labs.github.io/" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236ea8fe'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%230b0d12' font-family='sans-serif' font-weight='700'%3ES%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main" data-th="ข้ามไปเนื้อหา" data-en="Skip to content">ข้ามไปเนื้อหา</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Saharat Labs">
+        <span class="brand-mark">S</span>
+        <span class="brand-text">Saharat<span class="accent">Labs</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main">
+        <a href="#about" data-th="เกี่ยวกับ" data-en="About">เกี่ยวกับ</a>
+        <a href="#projects" data-th="โปรเจกต์" data-en="Projects">โปรเจกต์</a>
+        <a href="#focus" data-th="จุดเน้น" data-en="Focus">จุดเน้น</a>
+        <a href="#community" data-th="ชุมชน" data-en="Community">ชุมชน</a>
+        <a href="#contact" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-pressed="true">TH</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="wrap hero-inner reveal">
+        <p class="eyebrow" data-th="องค์กรเล็ก ๆ ที่สร้างของจริง" data-en="A small org that ships real things">
+          องค์กรเล็ก ๆ ที่สร้างของจริง
+        </p>
+        <h1>
+          <span data-th="สร้าง AI ที่" data-en="Build AI that">สร้าง AI ที่</span>
+          <span class="grad" data-th="รันในเครื่องคุณ" data-en="runs on your machine">รันในเครื่องคุณ</span>
+        </h1>
+        <p class="lead"
+           data-th="Saharat Labs รวมโปรเจกต์ AI agents เครื่องมือนักพัฒนา และการทดลอง — เรียบง่าย เข้าใจได้ และใช้งานได้จริง"
+           data-en="Saharat Labs is a home for AI agents, developer tools, and experiments — simple, understandable, and genuinely useful.">
+          Saharat Labs รวมโปรเจกต์ AI agents เครื่องมือนักพัฒนา และการทดลอง — เรียบง่าย เข้าใจได้ และใช้งานได้จริง
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projects" data-th="ดูโปรเจกต์" data-en="View projects">ดูโปรเจกต์</a>
+          <a class="btn ghost" href="https://github.com/Saharat-labs/community/discussions" target="_blank" rel="noopener"
+             data-th="ร่วมพูดคุย" data-en="Join the discussion">ร่วมพูดคุย</a>
+        </div>
+
+        <ul class="stats">
+          <li><b>8</b><span data-th="โมเดล AI ในเครื่อง" data-en="local AI models">โมเดล AI ในเครื่อง</span></li>
+          <li><b>100%</b><span data-th="รันแบบ local-first" data-en="local-first">รันแบบ local-first</span></li>
+          <li><b>0</b><span data-th="ค่าใช้จ่ายคลาวด์" data-en="cloud cost">ค่าใช้จ่ายคลาวด์</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="wrap reveal">
+        <h2 class="h2" data-th="เกี่ยวกับเรา" data-en="About">เกี่ยวกับเรา</h2>
+        <p class="body"
+           data-th="เราสนใจสิ่งที่มีประโยชน์จริง: เครื่องมือที่รันบนเครื่องตัวเองได้ (local-first) โค้ดที่อ่านรู้เรื่อง และโปรเจกต์ที่จับต้องได้ ทุกอย่างใน Saharat Labs เริ่มจากความอยากรู้ และจบที่ของที่ใช้งานได้"
+           data-en="We care about things that are actually useful: tools that run on your own machine, code you can read, and projects you can touch. Everything here starts with curiosity and ends with something that works.">
+          เราสนใจสิ่งที่มีประโยชน์จริง: เครื่องมือที่รันบนเครื่องตัวเองได้ (local-first) โค้ดที่อ่านรู้เรื่อง และโปรเจกต์ที่จับต้องได้ ทุกอย่างใน Saharat Labs เริ่มจากความอยากรู้ และจบที่ของที่ใช้งานได้
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section alt" id="projects">
+      <div class="wrap">
+        <h2 class="h2 reveal" data-th="โปรเจกต์" data-en="Projects">โปรเจกต์</h2>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-top"><span class="dot"></span><h3>pydroid</h3></div>
+            <p data-th="Python REPL บนเบราว์เซอร์ ขับเคลื่อนด้วย Pyodide — เขียนโค้ดและรันได้ทันทีโดยไม่ต้องติดตั้งอะไร"
+               data-en="A browser-based Python REPL powered by Pyodide — write and run Python with zero setup.">
+              Python REPL บนเบราว์เซอร์ ขับเคลื่อนด้วย Pyodide — เขียนโค้ดและรันได้ทันทีโดยไม่ต้องติดตั้งอะไร
+            </p>
+            <a class="card-link" href="https://github.com/Saharat-labs/pydroid" target="_blank" rel="noopener">
+              <span data-th="เปิดใน GitHub" data-en="Open on GitHub">เปิดใน GitHub</span> →
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-top"><span class="dot"></span><h3>community</h3></div>
+            <p data-th="ศูนย์กลางพูดคุยขององค์กร — ประกาศ เสนอไอเดีย ถาม-ตอบ และโชว์ผลงาน ผ่าน GitHub Discussions"
+               data-en="The org's conversation hub — announcements, ideas, Q&A, and show-and-tell via GitHub Discussions.">
+              ศูนย์กลางพูดคุยขององค์กร — ประกาศ เสนอไอเดีย ถาม-ตอบ และโชว์ผลงาน ผ่าน GitHub Discussions
+            </p>
+            <a class="card-link" href="https://github.com/Saharat-labs/community" target="_blank" rel="noopener">
+              <span data-th="ไปที่ชุมชน" data-en="Visit community">ไปที่ชุมชน</span> →
+            </a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-top"><span class="dot"></span><h3>ai-router</h3></div>
+            <p data-th="ตัวจัดเส้นทางคำสั่งไปยังโมเดลที่ถนัดที่สุดในเครื่อง — เลือกโมเดลตามงานโดยอัตโนมัติ"
+               data-en="Routes a prompt to the best local model for the job — automatic model selection per task.">
+              ตัวจัดเส้นทางคำสั่งไปยังโมเดลที่ถนัดที่สุดในเครื่อง — เลือกโมเดลตามงานโดยอัตโนมัติ
+            </p>
+            <a class="card-link" href="https://github.com/Saharat-labs" target="_blank" rel="noopener">
+              <span data-th="ดูในองค์กร" data-en="See the org">ดูในองค์กร</span> →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOCUS -->
+    <section class="section" id="focus">
+      <div class="wrap">
+        <h2 class="h2 reveal" data-th="จุดเน้น" data-en="What we focus on">จุดเน้น</h2>
+        <div class="grid three">
+          <div class="feature reveal">
+            <div class="ico">🧠</div>
+            <h3 data-th="AI แบบ Local-first" data-en="Local-first AI">AI แบบ Local-first</h3>
+            <p data-th="โมเดลรันบนเครื่องคุณ ไม่ต้องส่งข้อมูลออกไปข้างนอก"
+               data-en="Models run on your own machine — your data never leaves.">
+              โมเดลรันบนเครื่องคุณ ไม่ต้องส่งข้อมูลออกไปข้างนอก
+            </p>
+          </div>
+          <div class="feature reveal">
+            <div class="ico">🛠️</div>
+            <h3 data-th="เครื่องมือนักพัฒนา" data-en="Developer tools">เครื่องมือนักพัฒนา</h3>
+            <p data-th="เครื่องมือเล็ก ๆ ที่ลดงานซ้ำซาก และทำให้งานง่ายขึ้นจริง"
+               data-en="Small tools that cut the busywork and make things simpler.">
+              เครื่องมือเล็ก ๆ ที่ลดงานซ้ำซาก และทำให้งานง่ายขึ้นจริง
+            </p>
+          </div>
+          <div class="feature reveal">
+            <div class="ico">🧪</div>
+            <h3 data-th="ทดลองอย่างเปิดกว้าง" data-en="Open experiments">ทดลองอย่างเปิดกว้าง</h3>
+            <p data-th="ทุกอย่างเปิดให้ดู ปรับ และนำไปต่อยอดได้"
+               data-en="Everything is open to read, tweak, and build on.">
+              ทุกอย่างเปิดให้ดู ปรับ และนำไปต่อยอดได้
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="section alt" id="community">
+      <div class="wrap reveal">
+        <h2 class="h2" data-th="ชุมชน" data-en="Community">ชุมชน</h2>
+        <p class="body" data-th="มาคุยกันได้ ทุกช่องทาง — ถามคำถาม เสนอไอเดีย หรือแค่ทักทาย"
+           data-en="Come say hi — ask a question, share an idea, or just drop by.">
+          มาคุยกันได้ ทุกช่องทาง — ถามคำถาม เสนอไอเดีย หรือแค่ทักทาย
+        </p>
+        <div class="links">
+          <a class="link-tile" href="https://github.com/Saharat-labs/community/discussions" target="_blank" rel="noopener">
+            <span class="ico">💬</span>
+            <div>
+              <b data-th="GitHub Discussions" data-en="GitHub Discussions">GitHub Discussions</b>
+              <small data-th="เว็บบอร์ดขององค์กร" data-en="The org forum">เว็บบอร์ดขององค์กร</small>
+            </div>
+          </a>
+          <a class="link-tile" href="https://t.me/saharat_yok_bot" target="_blank" rel="noopener">
+            <span class="ico">✈️</span>
+            <div>
+              <b data-th="บอท Telegram" data-en="Telegram bot">บอท Telegram</b>
+              <small>@saharat_yok_bot</small>
+            </div>
+          </a>
+          <a class="link-tile" href="https://github.com/Saharat-labs" target="_blank" rel="noopener">
+            <span class="ico">🐙</span>
+            <div>
+              <b data-th="องค์กรบน GitHub" data-en="GitHub organization">องค์กรบน GitHub</b>
+              <small>@Saharat-labs</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="wrap reveal contact">
+        <h2 class="h2" data-th="ติดต่อ" data-en="Contact">ติดต่อ</h2>
+        <p class="body" data-th="อยากร่วมงาน หรือมีคำถาม? ทักทายได้ทาง GitHub"
+           data-en="Want to work together or have a question? Reach out on GitHub.">
+          อยากร่วมงาน หรือมีคำถาม? ทักทายได้ทาง GitHub
+        </p>
+        <a class="btn primary" href="https://github.com/saharatyokthuan" target="_blank" rel="noopener">
+          @saharatyokthuan
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year">2026</span> Saharat Labs</span>
+      <span class="muted" data-th="สร้างด้วย HTML/CSS/JS ล้วน · โฮสต์บน GitHub Pages"
+            data-en="Built with plain HTML/CSS/JS · Hosted on GitHub Pages">
+        สร้างด้วย HTML/CSS/JS ล้วน · โฮสต์บน GitHub Pages
+      </span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
