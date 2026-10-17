@@ -7,15 +7,48 @@
   <meta name="description" content="Saharat Labs — AI agents, developer tools, and experiments. Local-first, practical, and open." />
   <meta name="theme-color" content="#0b0d12" />
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://saharat-labs.github.io/" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Saharat Labs" />
-  <meta property="og:description" content="AI agents, tools, and experiments — local-first and practical." />
+  <meta property="og:site_name" content="Saharat Labs" />
+  <meta property="og:title" content="Saharat Labs — AI agents, tools, and experiments" />
+  <meta property="og:description" content="Saharat Labs — Local-first AI agents and developer tools. Practical experiments you can run and extend." />
   <meta property="og:url" content="https://saharat-labs.github.io/" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://saharat-labs.github.io/assets/og.png" />
+  <meta property="og:image:alt" content="Saharat Labs — AI agents, tools, and experiments" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="th_TH" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Saharat Labs — AI agents, tools, and experiments" />
+  <meta name="twitter:description" content="Local-first AI agents and developer tools. Practical experiments you can run and extend." />
+  <meta name="twitter:image" content="https://saharat-labs.github.io/assets/og.png" />
+
+  <!-- Security (meta CSP — GitHub Pages ตั้ง header ไม่ได้) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data:; base-uri 'self'; form-action 'self'; object-src 'none'" />
+
+  <!-- Structured data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Saharat Labs",
+    "url": "https://saharat-labs.github.io/",
+    "logo": "https://saharat-labs.github.io/assets/og.png",
+    "description": "Local-first AI agents and developer tools.",
+    "sameAs": [
+      "https://github.com/Saharat-labs"
+    ]
+  }
+  </script>
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236ea8fe'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%230b0d12' font-family='sans-serif' font-weight='700'%3ES%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1.1.0" />
 </head>
 <body>
   <a class="skip" href="#main" data-th="ข้ามไปเนื้อหา" data-en="Skip to content">ข้ามไปเนื้อหา</a>
@@ -66,7 +99,7 @@
         </p>
         <div class="cta">
           <a class="btn primary" href="#projects" data-th="ดูโปรเจกต์" data-en="View projects">ดูโปรเจกต์</a>
-          <a class="btn ghost" href="https://github.com/Saharat-labs/community/discussions" target="_blank" rel="noopener"
+          <a class="btn ghost" href="https://github.com/Saharat-labs/community/discussions" target="_blank" rel="noopener noreferrer"
              data-th="ร่วมพูดคุย" data-en="Join the discussion">ร่วมพูดคุย</a>
         </div>
 
@@ -101,7 +134,7 @@
                data-en="A browser-based Python REPL powered by Pyodide — write and run Python with zero setup.">
               Python REPL บนเบราว์เซอร์ ขับเคลื่อนด้วย Pyodide — เขียนโค้ดและรันได้ทันทีโดยไม่ต้องติดตั้งอะไร
             </p>
-            <a class="card-link" href="https://github.com/Saharat-labs/pydroid" target="_blank" rel="noopener">
+            <a class="card-link" href="https://github.com/Saharat-labs/pydroid" target="_blank" rel="noopener noreferrer">
               <span data-th="เปิดใน GitHub" data-en="Open on GitHub">เปิดใน GitHub</span> →
             </a>
           </article>
@@ -112,7 +145,7 @@
                data-en="The org's conversation hub — announcements, ideas, Q&A, and show-and-tell via GitHub Discussions.">
               ศูนย์กลางพูดคุยขององค์กร — ประกาศ เสนอไอเดีย ถาม-ตอบ และโชว์ผลงาน ผ่าน GitHub Discussions
             </p>
-            <a class="card-link" href="https://github.com/Saharat-labs/community" target="_blank" rel="noopener">
+            <a class="card-link" href="https://github.com/Saharat-labs/community" target="_blank" rel="noopener noreferrer">
               <span data-th="ไปที่ชุมชน" data-en="Visit community">ไปที่ชุมชน</span> →
             </a>
           </article>
@@ -123,7 +156,7 @@
                data-en="Routes a prompt to the best local model for the job — automatic model selection per task.">
               ตัวจัดเส้นทางคำสั่งไปยังโมเดลที่ถนัดที่สุดในเครื่อง — เลือกโมเดลตามงานโดยอัตโนมัติ
             </p>
-            <a class="card-link" href="https://github.com/Saharat-labs" target="_blank" rel="noopener">
+            <a class="card-link" href="https://github.com/Saharat-labs" target="_blank" rel="noopener noreferrer">
               <span data-th="ดูในองค์กร" data-en="See the org">ดูในองค์กร</span> →
             </a>
           </article>
@@ -173,21 +206,21 @@
           มาคุยกันได้ ทุกช่องทาง — ถามคำถาม เสนอไอเดีย หรือแค่ทักทาย
         </p>
         <div class="links">
-          <a class="link-tile" href="https://github.com/Saharat-labs/community/discussions" target="_blank" rel="noopener">
+          <a class="link-tile" href="https://github.com/Saharat-labs/community/discussions" target="_blank" rel="noopener noreferrer">
             <span class="ico">💬</span>
             <div>
               <b data-th="GitHub Discussions" data-en="GitHub Discussions">GitHub Discussions</b>
               <small data-th="เว็บบอร์ดขององค์กร" data-en="The org forum">เว็บบอร์ดขององค์กร</small>
             </div>
           </a>
-          <a class="link-tile" href="https://t.me/saharat_yok_bot" target="_blank" rel="noopener">
+          <a class="link-tile" href="https://t.me/saharat_yok_bot" target="_blank" rel="noopener noreferrer">
             <span class="ico">✈️</span>
             <div>
               <b data-th="บอท Telegram" data-en="Telegram bot">บอท Telegram</b>
               <small>@saharat_yok_bot</small>
             </div>
           </a>
-          <a class="link-tile" href="https://github.com/Saharat-labs" target="_blank" rel="noopener">
+          <a class="link-tile" href="https://github.com/Saharat-labs" target="_blank" rel="noopener noreferrer">
             <span class="ico">🐙</span>
             <div>
               <b data-th="องค์กรบน GitHub" data-en="GitHub organization">องค์กรบน GitHub</b>
@@ -206,7 +239,7 @@
            data-en="Want to work together or have a question? Reach out on GitHub.">
           อยากร่วมงาน หรือมีคำถาม? ทักทายได้ทาง GitHub
         </p>
-        <a class="btn primary" href="https://github.com/saharatyokthuan" target="_blank" rel="noopener">
+        <a class="btn primary" href="https://github.com/saharatyokthuan" target="_blank" rel="noopener noreferrer">
           @saharatyokthuan
         </a>
       </div>
@@ -223,6 +256,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=1.1.0"></script>
 </body>
 </html>

@@ -20,7 +20,14 @@
 ├── index.html            # หน้าเดียว (single page)
 ├── assets/
 │   ├── css/style.css     # ธีมมินิมอลโหมดมืด
-│   └── js/main.js        # สลับภาษา, เมนู, animation
+│   ├── js/main.js        # สลับภาษา, เมนู, animation, active nav
+│   ├── og.svg            # ต้นแบบภาพ social (แก้แล้วแปลงเป็น og.png)
+│   └── og.png            # ภาพ social 1200×630 (ใช้กับ OG/Twitter)
+├── sitemap.xml           # แผนที่เว็บ (SEO)
+├── robots.txt            # อนุญาต crawler + ชี้ sitemap
+├── LICENSE               # MIT
+├── .github/workflows/
+│   └── validate-html.yml # CI ตรวจ HTML ตอน push/PR
 ├── .nojekyll             # ปิดการประมวลผล Jekyll ของ Pages
 └── README.md
 ```
@@ -44,6 +51,34 @@
 | ข้อความทั้งหมด | `index.html` |
 | สี / ธีม / ระยะห่าง | `assets/css/style.css` (ตัวแปรใน `:root`) |
 | ลิงก์โปรเจกต์ | `index.html` ส่วน `#projects` |
+| meta/SEO (canonical, OG, JSON-LD) | `index.html` ใน `<head>` |
+| จำนวน/รายละเอียดที่โชว์บนการ์ดแชร์ | ดูหัวข้อ "อัปเดตภาพ OG" ด้านล่าง |
+
+## 🖼️ อัปเดตภาพ OG (social share)
+
+แก้ `assets/og.svg` (ไฟล์ต้นแบบ) แล้วแปลงเป็น PNG ขนาด 1200×630:
+
+```bash
+# ด้วย rsvg-convert (มีในระบบนี้)
+rsvg-convert -w 1200 -h 630 assets/og.svg -o assets/og.png
+
+# ทางเลือกอื่น
+# convert assets/og.svg -background none -resize 1200x630 assets/og.png   # ImageMagick
+# inkscape assets/og.svg --export-type=png -w 1200 -h 630 -o assets/og.png
+```
+
+หลังอัปเดต ให้ตรวจ preview (cache อาจค้าง — ต้อง scrape ใหม่):
+- Facebook: https://developers.facebook.com/tools/debug/
+- Twitter/X: https://cards-dev.twitter.com/validator
+
+## 🔢 อัปเดตเวอร์ชัน (cache-busting)
+
+เมื่อแก้ `style.css` หรือ `main.js` ให้ bump เลข `?v=` ใน `index.html`:
+
+```html
+<link rel="stylesheet" href="assets/css/style.css?v=1.1.0" />
+<script src="assets/js/main.js?v=1.1.0"></script>
+```
 
 ## 🧪 รันในเครื่อง
 
@@ -62,6 +97,8 @@ git commit -m "feat: ..."
 git push
 ```
 
+CI (`validate-html.yml`) จะรันตรวจ HTML อัตโนมัติทุก push/PR — ดูผลที่แท็บ **Actions**
+
 ## 📄 สัญญาอนุญาต
 
-© Saharat Labs
+MIT — ดู [LICENSE](LICENSE) · © 2026 Saharat Labs

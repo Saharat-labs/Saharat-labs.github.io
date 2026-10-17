@@ -87,6 +87,7 @@ img, svg { max-width: 100%; display: block; }
   transition: color .18s ease, background .18s ease;
 }
 .nav-links a:hover { color: var(--text); background: var(--surface); }
+.nav-links a[aria-current="page"] { color: var(--text); background: var(--surface); }
 
 .nav-right { display: flex; align-items: center; gap: 10px; }
 

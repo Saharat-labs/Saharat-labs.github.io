@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#6ea8fe"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.15" r="0.8">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="24" fill="#0b0d12"/>
+  <rect width="1200" height="630" rx="24" fill="url(#glow)"/>
+
+  <g fill="white" font-family="DejaVu Sans, Noto Sans, Arial, sans-serif">
+    <rect x="60" y="60" width="120" height="120" rx="18" fill="url(#g)"/>
+    <text x="120" y="140" fill="#0b0d12" font-size="68" font-weight="700" text-anchor="middle">S</text>
+
+    <text x="240" y="150" fill="#e6e9ef" font-size="48" font-weight="700">Saharat Labs</text>
+    <text x="240" y="210" fill="#8b93a7" font-size="28">AI agents · developer tools · experiments</text>
+  </g>
+
+  <text x="60" y="560" fill="#8b93a7" font-size="26" font-family="DejaVu Sans, Noto Sans, Arial, sans-serif">saharat-labs.github.io</text>
+</svg>

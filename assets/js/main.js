@@ -99,10 +99,43 @@
     if (y) y.textContent = String(new Date().getFullYear());
   }
 
+  /* ------------------------------------------------- active nav link */
+  function initActiveNav() {
+    var links = document.querySelectorAll('.nav-links a[href^="#"]');
+    if (!links.length) return;
+
+    var map = {};
+    links.forEach(function (a) {
+      var sec = document.getElementById(a.getAttribute("href").slice(1));
+      if (sec) map[sec.id] = a;
+    });
+
+    function setCurrent(active) {
+      links.forEach(function (a) { a.removeAttribute("aria-current"); });
+      if (active) active.setAttribute("aria-current", "page");
+    }
+
+    links.forEach(function (a) {
+      a.addEventListener("click", function () { setCurrent(a); });
+    });
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && map[entry.target.id]) {
+            setCurrent(map[entry.target.id]);
+          }
+        });
+      }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+      Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+    }
+  }
+
   /* ------------------------------------------------------------ boot */
   function boot() {
     initLang();
     initNav();
+    initActiveNav();
     initReveal();
     initYear();
   }

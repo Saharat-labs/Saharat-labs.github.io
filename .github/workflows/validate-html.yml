@@ -1,0 +1,28 @@
+name: Validate HTML
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  html-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install html-validator-cli
+        run: npm install -g html-validator-cli@6
+
+      - name: Validate index.html
+        run: |
+          html-validator --file=index.html --verbose || true
+          # Exit non-zero on errors (uncomment to fail the job on errors)
+          # html-validator --file=index.html --verbose --fail-on-error
