@@ -1,0 +1,29 @@
+[
+  {
+    "id": "pydroid",
+    "title": "pydroid",
+    "desc_th": "Python REPL บนเบราว์เซอร์ ขับเคลื่อนด้วย Pyodide — เขียนโค้ดและรันได้ทันทีโดยไม่ต้องติดตั้งอะไร",
+    "desc_en": "A browser-based Python REPL powered by Pyodide — write and run Python with zero setup.",
+    "url": "https://github.com/Saharat-labs/pydroid",
+    "link_th": "เปิดใน GitHub",
+    "link_en": "Open on GitHub"
+  },
+  {
+    "id": "community",
+    "title": "community",
+    "desc_th": "ศูนย์กลางพูดคุยขององค์กร — ประกาศ เสนอไอเดีย ถาม-ตอบ และโชว์ผลงาน ผ่าน GitHub Discussions",
+    "desc_en": "The org's conversation hub — announcements, ideas, Q&A, and show-and-tell via GitHub Discussions.",
+    "url": "https://github.com/Saharat-labs/community",
+    "link_th": "ไปที่ชุมชน",
+    "link_en": "Visit community"
+  },
+  {
+    "id": "ai-router",
+    "title": "ai-router",
+    "desc_th": "ตัวจัดเส้นทางคำสั่งไปยังโมเดลที่ถนัดที่สุดในเครื่อง — เลือกโมเดลตามงานโดยอัตโนมัติ",
+    "desc_en": "Routes a prompt to the best local model for the job — automatic model selection per task.",
+    "url": "https://github.com/Saharat-labs",
+    "link_th": "ดูในองค์กร",
+    "link_en": "See the org"
+  }
+]

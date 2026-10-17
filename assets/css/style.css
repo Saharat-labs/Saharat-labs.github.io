@@ -9,6 +9,7 @@
   --surface:   #12151c;
   --surface-2: #171b24;
   --border:    #222836;
+  --border-strong: #646d83;   /* ขอบปุ่ม/UI — ต้อง ≥3:1 (WCAG 1.4.11) */
   --text:      #e6e9ef;
   --muted:     #8b93a7;
   --accent:    #6ea8fe;
@@ -55,6 +56,12 @@ img, svg { max-width: 100%; display: block; }
   padding: 10px 16px; border-radius: 0 0 10px 0; z-index: 100;
 }
 .skip:focus { left: 0; }
+
+/* จุดโฟกัสคีย์บอร์ด — ต้องเห็นชัด (WCAG 2.4.7) ใช้เฉพาะตอนเลื่อนด้วยคีย์บอร์ด */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 /* ---------------------------------------------------------------- NAV */
 .nav {
@@ -161,7 +168,7 @@ h1 {
   color: #06101f; box-shadow: 0 8px 24px rgba(110,168,254,.25);
 }
 .btn.primary:hover { box-shadow: 0 12px 30px rgba(110,168,254,.35); }
-.btn.ghost { border-color: var(--border); background: var(--surface); color: var(--text); }
+.btn.ghost { border-color: var(--border-strong); background: var(--surface); color: var(--text); }
 .btn.ghost:hover { border-color: var(--accent); }
 
 .stats {

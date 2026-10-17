@@ -8,9 +8,11 @@
 
   var STORAGE_KEY = "sl-lang";
   var DEFAULT_LANG = "th";
+  var currentLang = DEFAULT_LANG;
 
   /* -------------------------------------------------- language switch */
   function applyLang(lang) {
+    currentLang = lang;
     document.documentElement.lang = lang;
 
     document.querySelectorAll("[data-th][data-en]").forEach(function (el) {
@@ -75,22 +77,90 @@
   }
 
   /* --------------------------------------------------- scroll reveal */
-  function initReveal() {
-    var items = document.querySelectorAll(".reveal");
+  var revealIO = null;
+
+  function observeReveal(items) {
+    if (!items || !items.length) return;
     if (!("IntersectionObserver" in window)) {
       items.forEach(function (el) { el.classList.add("in"); });
       return;
     }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry, i) {
-        if (entry.isIntersecting) {
-          var el = entry.target;
-          setTimeout(function () { el.classList.add("in"); }, Math.min(i * 60, 240));
-          io.unobserve(el);
-        }
+    if (!revealIO) {
+      revealIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry, i) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            setTimeout(function () { el.classList.add("in"); }, Math.min(i * 60, 240));
+            revealIO.unobserve(el);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    }
+    items.forEach(function (el) { revealIO.observe(el); });
+  }
+
+  function initReveal() {
+    observeReveal(document.querySelectorAll(".reveal"));
+  }
+
+  /* ------------------------------------------------ projects (JSON) */
+  function buildCard(p) {
+    var art = document.createElement("article");
+    art.className = "card reveal";
+
+    var top = document.createElement("div");
+    top.className = "card-top";
+    var dot = document.createElement("span");
+    dot.className = "dot";
+    dot.setAttribute("aria-hidden", "true");      // จุดตกแต่ง
+    var h3 = document.createElement("h3");
+    h3.textContent = p.title || "";
+    top.appendChild(dot);
+    top.appendChild(h3);
+
+    var desc = document.createElement("p");
+    desc.setAttribute("data-th", p.desc_th || "");
+    desc.setAttribute("data-en", p.desc_en || "");
+    desc.textContent = p.desc_th || "";
+
+    var link = document.createElement("a");
+    link.className = "card-link";
+    link.href = p.url || "#";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    var label = document.createElement("span");
+    label.setAttribute("data-th", p.link_th || "เปิด");
+    label.setAttribute("data-en", p.link_en || "Open");
+    label.textContent = p.link_th || "เปิด";
+    link.appendChild(label);
+    link.appendChild(document.createTextNode(" →"));
+
+    art.appendChild(top);
+    art.appendChild(desc);
+    art.appendChild(link);
+    return art;
+  }
+
+  function initProjects() {
+    var grid = document.getElementById("projectsGrid");
+    if (!grid || !window.fetch) return;   // ไม่มี fetch → ปล่อย fallback แสดงต่อ
+
+    fetch("assets/data/projects.json", { credentials: "same-origin" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (list) {
+        if (!Array.isArray(list) || !list.length) return;
+        grid.textContent = "";            // ล้าง fallback
+        var cards = list.map(buildCard);
+        cards.forEach(function (c) { grid.appendChild(c); });
+        observeReveal(cards);             // ให้ animation reveal
+        applyLang(currentLang);           // ให้ตรงภาษาปัจจุบัน
+      })
+      .catch(function (err) {
+        if (window.console) console.warn("โหลด projects.json ไม่สำเร็จ:", err);
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    items.forEach(function (el) { io.observe(el); });
   }
 
   /* ------------------------------------------------------------ year */
@@ -137,6 +207,7 @@
     initNav();
     initActiveNav();
     initReveal();
+    initProjects();
     initYear();
   }
 

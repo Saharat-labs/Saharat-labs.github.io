@@ -20,7 +20,8 @@
 ├── index.html            # หน้าเดียว (single page)
 ├── assets/
 │   ├── css/style.css     # ธีมมินิมอลโหมดมืด
-│   ├── js/main.js        # สลับภาษา, เมนู, animation, active nav
+│   ├── js/main.js        # สลับภาษา, เมนู, active nav, render cards
+│   ├── data/projects.json# ข้อมูลโปรเจกต์ (JS โหลดมาแสดงเป็นการ์ด)
 │   ├── og.svg            # ต้นแบบภาพ social (แก้แล้วแปลงเป็น og.png)
 │   └── og.png            # ภาพ social 1200×630 (ใช้กับ OG/Twitter)
 ├── sitemap.xml           # แผนที่เว็บ (SEO)
@@ -50,7 +51,7 @@
 |---|---|
 | ข้อความทั้งหมด | `index.html` |
 | สี / ธีม / ระยะห่าง | `assets/css/style.css` (ตัวแปรใน `:root`) |
-| ลิงก์โปรเจกต์ | `index.html` ส่วน `#projects` |
+| ลิงก์/รายละเอียดโปรเจกต์ | `assets/data/projects.json` (เพิ่ม/ลบ object ได้เลย) |
 | meta/SEO (canonical, OG, JSON-LD) | `index.html` ใน `<head>` |
 | จำนวน/รายละเอียดที่โชว์บนการ์ดแชร์ | ดูหัวข้อ "อัปเดตภาพ OG" ด้านล่าง |
 

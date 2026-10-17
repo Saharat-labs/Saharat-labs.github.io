@@ -48,7 +48,7 @@
   </script>
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236ea8fe'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%230b0d12' font-family='sans-serif' font-weight='700'%3ES%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="assets/css/style.css?v=1.1.0" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1.2.0" />
 </head>
 <body>
   <a class="skip" href="#main" data-th="ข้ามไปเนื้อหา" data-en="Skip to content">ข้ามไปเนื้อหา</a>
@@ -127,39 +127,13 @@
     <section class="section alt" id="projects">
       <div class="wrap">
         <h2 class="h2 reveal" data-th="โปรเจกต์" data-en="Projects">โปรเจกต์</h2>
-        <div class="grid">
-          <article class="card reveal">
-            <div class="card-top"><span class="dot"></span><h3>pydroid</h3></div>
-            <p data-th="Python REPL บนเบราว์เซอร์ ขับเคลื่อนด้วย Pyodide — เขียนโค้ดและรันได้ทันทีโดยไม่ต้องติดตั้งอะไร"
-               data-en="A browser-based Python REPL powered by Pyodide — write and run Python with zero setup.">
-              Python REPL บนเบราว์เซอร์ ขับเคลื่อนด้วย Pyodide — เขียนโค้ดและรันได้ทันทีโดยไม่ต้องติดตั้งอะไร
-            </p>
-            <a class="card-link" href="https://github.com/Saharat-labs/pydroid" target="_blank" rel="noopener noreferrer">
-              <span data-th="เปิดใน GitHub" data-en="Open on GitHub">เปิดใน GitHub</span> →
-            </a>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-top"><span class="dot"></span><h3>community</h3></div>
-            <p data-th="ศูนย์กลางพูดคุยขององค์กร — ประกาศ เสนอไอเดีย ถาม-ตอบ และโชว์ผลงาน ผ่าน GitHub Discussions"
-               data-en="The org's conversation hub — announcements, ideas, Q&A, and show-and-tell via GitHub Discussions.">
-              ศูนย์กลางพูดคุยขององค์กร — ประกาศ เสนอไอเดีย ถาม-ตอบ และโชว์ผลงาน ผ่าน GitHub Discussions
-            </p>
-            <a class="card-link" href="https://github.com/Saharat-labs/community" target="_blank" rel="noopener noreferrer">
-              <span data-th="ไปที่ชุมชน" data-en="Visit community">ไปที่ชุมชน</span> →
-            </a>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-top"><span class="dot"></span><h3>ai-router</h3></div>
-            <p data-th="ตัวจัดเส้นทางคำสั่งไปยังโมเดลที่ถนัดที่สุดในเครื่อง — เลือกโมเดลตามงานโดยอัตโนมัติ"
-               data-en="Routes a prompt to the best local model for the job — automatic model selection per task.">
-              ตัวจัดเส้นทางคำสั่งไปยังโมเดลที่ถนัดที่สุดในเครื่อง — เลือกโมเดลตามงานโดยอัตโนมัติ
-            </p>
-            <a class="card-link" href="https://github.com/Saharat-labs" target="_blank" rel="noopener noreferrer">
-              <span data-th="ดูในองค์กร" data-en="See the org">ดูในองค์กร</span> →
-            </a>
-          </article>
+        <!-- การ์ดโหลดจาก assets/data/projects.json — แยกข้อมูลออกจาก HTML แก้ง่ายเมื่อมีหลายโปรเจกต์ -->
+        <div class="grid" id="projectsGrid">
+          <p class="body projects-fallback">
+            <a href="https://github.com/Saharat-labs/pydroid">pydroid</a> ·
+            <a href="https://github.com/Saharat-labs/community">community</a> ·
+            <a href="https://github.com/Saharat-labs">ai-router</a>
+          </p>
         </div>
       </div>
     </section>
@@ -170,7 +144,7 @@
         <h2 class="h2 reveal" data-th="จุดเน้น" data-en="What we focus on">จุดเน้น</h2>
         <div class="grid three">
           <div class="feature reveal">
-            <div class="ico">🧠</div>
+            <div class="ico" aria-hidden="true">🧠</div>
             <h3 data-th="AI แบบ Local-first" data-en="Local-first AI">AI แบบ Local-first</h3>
             <p data-th="โมเดลรันบนเครื่องคุณ ไม่ต้องส่งข้อมูลออกไปข้างนอก"
                data-en="Models run on your own machine — your data never leaves.">
@@ -178,7 +152,7 @@
             </p>
           </div>
           <div class="feature reveal">
-            <div class="ico">🛠️</div>
+            <div class="ico" aria-hidden="true">🛠️</div>
             <h3 data-th="เครื่องมือนักพัฒนา" data-en="Developer tools">เครื่องมือนักพัฒนา</h3>
             <p data-th="เครื่องมือเล็ก ๆ ที่ลดงานซ้ำซาก และทำให้งานง่ายขึ้นจริง"
                data-en="Small tools that cut the busywork and make things simpler.">
@@ -186,7 +160,7 @@
             </p>
           </div>
           <div class="feature reveal">
-            <div class="ico">🧪</div>
+            <div class="ico" aria-hidden="true">🧪</div>
             <h3 data-th="ทดลองอย่างเปิดกว้าง" data-en="Open experiments">ทดลองอย่างเปิดกว้าง</h3>
             <p data-th="ทุกอย่างเปิดให้ดู ปรับ และนำไปต่อยอดได้"
                data-en="Everything is open to read, tweak, and build on.">
@@ -207,21 +181,21 @@
         </p>
         <div class="links">
           <a class="link-tile" href="https://github.com/Saharat-labs/community/discussions" target="_blank" rel="noopener noreferrer">
-            <span class="ico">💬</span>
+            <span class="ico" aria-hidden="true">💬</span>
             <div>
               <b data-th="GitHub Discussions" data-en="GitHub Discussions">GitHub Discussions</b>
               <small data-th="เว็บบอร์ดขององค์กร" data-en="The org forum">เว็บบอร์ดขององค์กร</small>
             </div>
           </a>
           <a class="link-tile" href="https://t.me/saharat_yok_bot" target="_blank" rel="noopener noreferrer">
-            <span class="ico">✈️</span>
+            <span class="ico" aria-hidden="true">✈️</span>
             <div>
               <b data-th="บอท Telegram" data-en="Telegram bot">บอท Telegram</b>
               <small>@saharat_yok_bot</small>
             </div>
           </a>
           <a class="link-tile" href="https://github.com/Saharat-labs" target="_blank" rel="noopener noreferrer">
-            <span class="ico">🐙</span>
+            <span class="ico" aria-hidden="true">🐙</span>
             <div>
               <b data-th="องค์กรบน GitHub" data-en="GitHub organization">องค์กรบน GitHub</b>
               <small>@Saharat-labs</small>
@@ -256,6 +230,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=1.1.0"></script>
+  <script src="assets/js/main.js?v=1.2.0"></script>
 </body>
 </html>
