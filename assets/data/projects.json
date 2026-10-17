@@ -1,14 +1,5 @@
 [
   {
-    "id": "pydroid",
-    "title": "pydroid",
-    "desc_th": "Python REPL บนเบราว์เซอร์ ขับเคลื่อนด้วย Pyodide — เขียนโค้ดและรันได้ทันทีโดยไม่ต้องติดตั้งอะไร",
-    "desc_en": "A browser-based Python REPL powered by Pyodide — write and run Python with zero setup.",
-    "url": "https://github.com/Saharat-labs/pydroid",
-    "link_th": "เปิดใน GitHub",
-    "link_en": "Open on GitHub"
-  },
-  {
     "id": "community",
     "title": "community",
     "desc_th": "ศูนย์กลางพูดคุยขององค์กร — ประกาศ เสนอไอเดีย ถาม-ตอบ และโชว์ผลงาน ผ่าน GitHub Discussions",
